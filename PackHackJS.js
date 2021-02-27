@@ -135,12 +135,6 @@ $(document).ready(function () {
         canvasBackgroundColor = mainColor;
         canvasTextColor = altColor;
     });
-    $(".day").click(function () {
-        $(".day").removeClass("active");
-        $(".schedule-day").removeClass("active");
-        $(this).addClass("active");
-        $("#" + $(this).data("target")).addClass("active");
-    });
 });
 
 // Highlight current section user is viewing in the side navbar
