@@ -1,16 +1,13 @@
 /* Variables */
 :root {
-    --red: #cc0000;
-    --dark-red: #a94a64;
-    --white: #fff;
-    --grey: #ced3dc;
-    --black: #2d2d2a;
+    --primary: #e91212;
+    --secondary: #ffffff;
 }
 
 body,
 html {
     min-width: 320px;
-    color: #2d2d2a;
+    color: var(--primary);
     font-family: Montserrat;
     -webkit-overflow-scrolling: touch; /* Flick scrolling for iPhones */
     scroll-behavior: smooth;
@@ -31,7 +28,7 @@ html {
 }
 
 .button-link a {
-    color: black;
+    color: #e91212;
 }
 
 .button-link:hover {
@@ -79,7 +76,7 @@ html {
     position: fixed;
     bottom: 10px;
     left: 10px;
-    color: rgba(244, 244, 244, 0.06);
+    color: white;
     cursor: pointer;
     z-index: 1000;
     -webkit-transition: transform 0.5s; /* Safari */
@@ -109,7 +106,6 @@ html {
 
 .theme-3 {
     margin-top: 190px;
-    background-color: dimgray;
     background-color: #fb6542;
     border: 3px solid #ffffff;
 }
@@ -117,7 +113,7 @@ html {
 .theme-4 {
     margin-top: 260px;
     background-color: #07575b;
-    border: 3px solid #c4dfe6;
+    border: 3px solid #ffffff;
 }
 
 .theme-5 {
@@ -127,7 +123,7 @@ html {
 }
 
 .active-theme {
-    box-shadow: 0px 0px 20px var(--grey);
+    box-shadow: 0px 0px 20px #07575b;
 }
 
 a:hover {
@@ -140,7 +136,7 @@ img {
 }
 
 hr {
-    border-color: var(--red);
+    border-color: var(--primary);
     width: 50%;
 }
 
@@ -151,12 +147,8 @@ canvas {
 }
 
 #header {
-    color: var(--white);
+    color: white;
     height: 100vh;
-}
-
-.short-text {
-    display: none;
 }
 
 .col-centered {
@@ -171,11 +163,11 @@ canvas {
 }
 
 #sideNav a.active {
-    color: var(--red);
+    color: var(--primary);
 }
 
 section {
-    background-color: var(--white);
+    background-color: white;
     padding-bottom: 80px;
 }
 
@@ -186,8 +178,8 @@ section:first-of-type {
 .section-title {
     padding: 10px;
     margin-bottom: 20px;
-    color: var(--red);
-    background-color: var(--white);
+    color: var(--primary);
+    background-color: white;
     width: 100%;
 }
 
@@ -198,8 +190,8 @@ section:first-of-type {
 
 .icon-section svg {
     margin-bottom: 20px;
-    color: var(--white) !important;
-    background-color: var(--red);
+    color: white !important;
+    background-color: var(--primary);
     height: 100px;
     width: 100px !important;
     border-radius: 100%;
@@ -216,43 +208,7 @@ section:first-of-type {
     top: 25%;
     height: 50%;
     width: 1px; /* or 100px */
-    border-right: 1px solid var(--grey);
-}
-
-.day {
-    color: var(--black);
-}
-
-.day:hover {
-    color: var(--red);
-}
-
-.day.active {
-    color: var(--red);
-}
-
-#schedule {
-    display: none;
-}
-
-.schedule-day {
-    display: none;
-}
-
-.schedule-day.active {
-    display: block;
-}
-
-.schedule-day > div {
-    padding-bottom: 10px;
-}
-
-.schedule-day > div > div:first-child {
-    text-align: right;
-}
-
-.schedule-day > div > div:nth-child(2) {
-    color: var(--dark-red);
+    border-right: 1px solid #07575b;
 }
 
 .question {
@@ -265,7 +221,7 @@ section:first-of-type {
 
 .question h4 {
     display: table;
-    color: var(--red);
+    color: var(--primary);
     padding: 10px;
 }
 
@@ -306,12 +262,12 @@ section:first-of-type {
 #footer {
     padding: 50px 0px;
     width: 100%;
-    color: var(--white);
-    background-color: var(--red);
+    color: white;
+    background-color: var(--primary);
 }
 
 #footer > div > a {
-    color: var(--white);
+    color: white;
     margin: 20px;
 }
 
@@ -352,64 +308,6 @@ section:first-of-type {
     #sideNav {
         display: block !important;
     }
-}
-
-/* The Modal (background) */
-.modal {
-    display: block; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-
-/* The Close Button */
-.close {
-    color: #bb0000;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Modal Header */
-.modal-header {
-    background-color: white;
-    color: #bb0000;
-}
-
-/* Modal Body */
-.modal-body {
-    color: #bb0000;
-    padding: 16px 16px;
-}
-
-/* Modal Footer */
-.modal-footer {
-    padding: 20px 16px;
-    background-color: white;
-    color: #bb0000;
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: white;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 30px;
-    width: 80%; /* Could be more or less, depending on screen size */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
 }
 
 /* Add Animation */
