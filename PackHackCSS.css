@@ -27,7 +27,7 @@ html {
     outline: none;
 }
 
-.button-link a {
+.button-link {
     color: #e91212;
 }
 
@@ -37,7 +37,7 @@ html {
     transform: translateY(-7px);
 }
 
-.button-link:hover a {
+.button-link:hover {
     color: white;
 }
 
