@@ -149,14 +149,12 @@ $(document).ready(function () {
                     ? canvasBackgroundColor
                     : canvasTextColor
             );
-            $(this)
-                .find("> a")
-                .css(
-                    "color",
-                    e.type === "mouseenter"
-                        ? canvasTextColor
-                        : canvasBackgroundColor
-                );
+            $(this).css(
+                "color",
+                e.type === "mouseenter"
+                    ? canvasTextColor
+                    : canvasBackgroundColor
+            );
         });
     });
 });
