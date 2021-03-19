@@ -138,7 +138,7 @@ $(document).ready(function () {
 
         // Set the link text normally to be opposite of canvas
         $(".button-link").css("background-color", canvasTextColor);
-        $(".button-link a").css("color", canvasBackgroundColor);
+        $(".button-link").css("color", canvasBackgroundColor);
         $("#theme-pullout").css("color", canvasTextColor);
 
         // When hovering over button, change button bg color and link text color
