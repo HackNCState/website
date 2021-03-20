@@ -1,30 +1,11 @@
 //document ready
 $(document).ready(function () {
     window.scrollTo(0, 1);
-    document.addEventListener("readystatechange", function () {
-        if (document.readyState === "complete") {
-            init();
-        }
-    });
-    function init() {
-        var modal = document.getElementById("myModal");
 
-        var span = document.getElementsByClassName("close")[0];
-
-        span.onclick = function () {
-            modal.style.display = "none";
-        };
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        };
-    }
     //Globals
     var canvasBackgroundColor = "rgb(204, 0, 0)",
         canvasTextColor = "rgb(255, 255, 255)",
-        activeImage = "PackHack_Logo.png",
-        nonActiveImage = "PackHack_Logo_Red.png";
+        activeImage = "PackHack_Logo.png";
 
     // Falling binary effect
     // ** Adapted from matrix rain animation courtesy of thecodeplayer
@@ -115,25 +96,66 @@ $(document).ready(function () {
     });
 
     $(".color-ball").click(function () {
+        // If you selected the same theme again, do nothing
         if ($(this).hasClass("active-theme")) return;
+
+        // Otherwise, switch which theme is actuve to the one selected
         $(".color-ball").removeClass("active-theme");
         $(this).addClass("active-theme");
+
+        canvasBackgroundColor = $(this).css("background-color");
+        canvasTextColor = $(this).css("border-color");
+
+        // If using white (really any light) background theme
         if ($(".color-ball").index(this) == 1) {
             activeImage = "images/PackHack_Logo_Red.png";
-            $("body").css("color", "white");
+
+            document.documentElement.style.setProperty(
+                "--primary",
+                canvasTextColor
+            );
+            document.documentElement.style.setProperty(
+                "--secondary",
+                canvasBackgroundColor
+            );
         } else {
             activeImage = "images/PackHack_Logo.png";
-            $("body").css("color", "#2D2D2A");
+
+            document.documentElement.style.setProperty(
+                "--primary",
+                canvasBackgroundColor
+            );
+            document.documentElement.style.setProperty(
+                "--secondary",
+                canvasTextColor
+            );
         }
+
+        // Set the background wolf image. It'll need to change if going to/from white bg
         $("#banner-logo").attr("src", activeImage);
 
-        var mainColor = $(this).css("background-color");
-        var altColor = $(this).css("border-color");
-        document.documentElement.style.setProperty("--red", mainColor);
-        document.documentElement.style.setProperty("--off-white", altColor);
+        $(".below-banner-text").css("color", canvasTextColor);
 
-        canvasBackgroundColor = mainColor;
-        canvasTextColor = altColor;
+        // Set the link text normally to be opposite of canvas
+        $(".button-link").css("background-color", canvasTextColor);
+        $(".button-link").css("color", canvasBackgroundColor);
+        $("#theme-pullout").css("color", canvasTextColor);
+
+        // When hovering over button, change button bg color and link text color
+        $(".button-link").hover(function (e) {
+            $(this).css(
+                "background-color",
+                e.type === "mouseenter"
+                    ? canvasBackgroundColor
+                    : canvasTextColor
+            );
+            $(this).css(
+                "color",
+                e.type === "mouseenter"
+                    ? canvasTextColor
+                    : canvasBackgroundColor
+            );
+        });
     });
 });
 
