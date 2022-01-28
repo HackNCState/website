@@ -321,3 +321,7 @@ section:first-of-type {
         opacity: 1;
     }
 }
+
+#typeFormButtonStyle{
+    margin-top: 15;
+}
