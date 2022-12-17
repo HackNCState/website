@@ -25,15 +25,12 @@ html {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-}
-
-.button-link {
   color: #e91212;
 }
 
 .button-link:hover {
   background-color: #e91212;
-  box-shadow: 0px 15px 20px rgba(122, 12, 12, 0.685);
+  box-shadow: 0px 15rem 20px rgba(122, 12, 12, 0.685);
   transform: translateY(-7px);
 }
 
