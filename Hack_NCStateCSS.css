@@ -2,6 +2,7 @@
 :root {
   --primary: #e91212;
   --secondary: #ffffff;
+  --tertiary: #000000;
 }
 
 body,
@@ -11,6 +12,16 @@ html {
   font-family: Montserrat;
   -webkit-overflow-scrolling: touch; /* Flick scrolling for iPhones */
   scroll-behavior: smooth;
+}
+
+#countdown {
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+a {
+  cursor: pointer;
+  color: var(--primary);
 }
 
 .button-link {
@@ -26,11 +37,15 @@ html {
   cursor: pointer;
   outline: none;
   color: #e91212;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
 }
 
 .button-link:hover {
   background-color: #e91212;
-  box-shadow: 0px 15rem 20px rgba(122, 12, 12, 0.685);
+  box-shadow: 0px 15px 20px rgba(122, 12, 12, 0.685);
   transform: translateY(-7px);
 }
 
@@ -145,7 +160,7 @@ canvas {
 
 #header {
   color: white;
-  height: 100vh;
+  height: 120vh;
 }
 
 .col-centered {
@@ -180,12 +195,12 @@ section:first-of-type {
   width: 100%;
 }
 
-.icon-section {
+.image-section {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-.icon-section svg {
+.image-section svg {
   margin-bottom: 20px;
   color: white !important;
   background-color: var(--primary);
@@ -194,7 +209,7 @@ section:first-of-type {
   border-radius: 100%;
 }
 
-.icon-holder svg {
+.image-holder svg {
   padding: 20px;
 }
 
@@ -215,7 +230,6 @@ section:first-of-type {
 .question {
   padding: 10px 0px;
   width: 95%;
-  overflow: hidden;
   -webkit-transition: max-height 0.5s, height 0.5s; /* Safari */
   transition: max-height 0.5s, height 0.5s;
 }
@@ -326,4 +340,113 @@ section:first-of-type {
 
 #typeFormButtonStyle {
   margin-top: 15;
+}
+
+@font-face {
+  font-family: "Hack NCState";
+  src: url("fonts/Hack_NCState.ttf?p9luny") format("truetype");
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?567je6");
+  src: url("fonts/icomoon.eot?567je6#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?567je6") format("truetype"),
+    url("fonts/icomoon.woff?567je6") format("woff"),
+    url("fonts/icomoon.svg?567je6#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* better font rendering*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* inline the icon */
+  display: inline-block;
+  position: relative;
+  left: 5%;
+
+  /* style icons */
+  font-size: 2rem;
+}
+
+.icon-wolf:before {
+  content: "\1f43a";
+}
+
+.icon-devpost:before {
+  content: "\1f3f6";
+}
+
+.icon-notion:before {
+  content: "\1f323";
+}
+
+.icon-typeform:before {
+  content: "\1f398";
+}
+
+.icon-discord:before {
+  content: "\1f322";
+}
+
+.card-image {
+  display: block;
+  position: relative;
+}
+
+.person-card .card-image {
+  width: 100%;
+  filter: brightness(100%);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  transition: all 0.5s;
+  margin-bottom: 1rem;
+}
+
+.person-card .card-image:hover {
+  filter: brightness(80%);
+  background-size: 110%;
+  transition: all 0.5s;
+}
+
+.person-card .card-image::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.person-card .card-content .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--tertiary);
+}
+
+.person-card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.person-card .linkedin-image {
+  font-size: 2rem;
+  color: var(--secondary);
+}
+
+.future-statement {
+  color: var(--tertiary);
 }

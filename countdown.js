@@ -6,7 +6,7 @@ gtag("js", new Date());
 
 gtag("config", "UA-56623245-2");
 
-var countDownDate = new Date("March 20, 2021 10:00:00").getTime();
+var countDownDate = new Date("2023-04-08T05:38:00.000Z").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -22,7 +22,7 @@ var x = setInterval(function () {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
+  // Display the result in the element with id="countdown"
   document.getElementById("countdown").innerHTML =
     "See you in " +
     days +
