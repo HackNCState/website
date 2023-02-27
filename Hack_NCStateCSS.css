@@ -377,7 +377,6 @@ section:first-of-type {
   /* inline the icon */
   display: inline-block;
   position: relative;
-  left: 5%;
 
   /* style icons */
   font-size: 2rem;
@@ -408,6 +407,10 @@ section:first-of-type {
   position: relative;
 }
 
+.person-card {
+  width: 9rem;
+}
+
 .person-card .card-image {
   width: 100%;
   filter: brightness(100%);
@@ -431,7 +434,7 @@ section:first-of-type {
 }
 
 .person-card .card-content .name {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--tertiary);
 }
@@ -439,7 +442,6 @@ section:first-of-type {
 .person-card .card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .person-card .linkedin-image {
