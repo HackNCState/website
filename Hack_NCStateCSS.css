@@ -27,6 +27,7 @@ a {
 .button-link {
   height: 3em;
   font-size: 11pt;
+  font-weight: bolder;
   text-transform: uppercase;
   background-color: white;
   letter-spacing: 2.5px;
@@ -46,7 +47,7 @@ a {
 .button-link:hover {
   background-color: #e91212;
   box-shadow: 0px 15px 20px rgba(122, 12, 12, 0.685);
-  transform: translateY(-7px);
+  transform: translateY(-5px);
 }
 
 .button-link:hover {
@@ -160,7 +161,11 @@ canvas {
 
 #header {
   color: white;
-  height: 120vh;
+  height: 110vh;
+}
+
+#banner-logo {
+  margin-top: 5rem;
 }
 
 .col-centered {
@@ -377,7 +382,6 @@ section:first-of-type {
   /* inline the icon */
   display: inline-block;
   position: relative;
-  left: 5%;
 
   /* style icons */
   font-size: 2rem;
@@ -408,6 +412,10 @@ section:first-of-type {
   position: relative;
 }
 
+.person-card {
+  width: 9rem;
+}
+
 .person-card .card-image {
   width: 100%;
   filter: brightness(100%);
@@ -431,7 +439,7 @@ section:first-of-type {
 }
 
 .person-card .card-content .name {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--tertiary);
 }
@@ -439,7 +447,6 @@ section:first-of-type {
 .person-card .card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .person-card .linkedin-image {
