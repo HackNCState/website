@@ -161,7 +161,7 @@ canvas {
 
 #header {
   color: white;
-  height: 110vh;
+  padding-bottom: 2rem;
 }
 
 #banner-logo {
