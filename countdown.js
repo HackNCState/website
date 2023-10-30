@@ -6,7 +6,7 @@ gtag("js", new Date());
 
 gtag("config", "UA-56623245-2");
 
-var countDownDate = new Date("2023-04-08T05:38:00.000Z").getTime();
+var countDownDate = new Date("2024-02-03T05:38:00.000Z").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
