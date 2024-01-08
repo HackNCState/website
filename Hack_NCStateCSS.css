@@ -245,6 +245,10 @@ section:first-of-type {
   padding: 10px;
 }
 
+.icon-typeform {
+  top: 5px;
+}
+
 .question span {
   display: block;
   padding: 0px 10px;
