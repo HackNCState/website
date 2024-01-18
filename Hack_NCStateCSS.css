@@ -214,6 +214,10 @@ section:first-of-type {
   padding-right: 40px;
 }
 
+.image-section span {
+  color:#000000;
+}
+
 .image-section svg {
   margin-bottom: 20px;
   color: white !important;
