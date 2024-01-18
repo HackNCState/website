@@ -249,6 +249,10 @@ section:first-of-type {
   top: 5px;
 }
 
+.icon-devpost {
+  left: 5px;
+}
+
 .question span {
   display: block;
   padding: 0px 10px;
