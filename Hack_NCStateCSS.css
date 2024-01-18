@@ -266,6 +266,10 @@ section:first-of-type {
   max-width: 33%;
 }
 
+.tera-sponsor {
+  max-width: 100%;
+}
+
 .sponsor-row {
   display: flex;
   max-height: 100px;
