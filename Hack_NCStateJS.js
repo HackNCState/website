@@ -19,11 +19,11 @@ $(document).ready(function () {
    * 2) Subtract 2 so that the canvas width matches width: 100% (2?)
    */
   var longerWidth =
-    screen.availHeight > screen.availWidth
-      ? screen.availHeight
-      : screen.availWidth;
-  c.height = screen.availHeight;
-  c.width = screen.availWidth;
+    screen.height > screen.width
+      ? screen.height
+      : screen.width;
+  c.height = screen.height;
+  c.width = screen.width;
   // isiPhone returns true here for non-iPhone even though its the same exact conditional... *sigh* smh
   if (
     navigator.platform.indexOf("iPod") !== -1 ||
