@@ -347,8 +347,63 @@ section:first-of-type {
   }
 }
 
-#typeFormButtonStyle {
+/* Lots of media queries so registration button looks good on mobile */
+#typeFormButtonStyleLarge {
   margin-top: 15;
+  display: inline-block;
+}
+
+#typeFormButtonStyleSmall {
+  margin-top: 15;
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  #typeFormButtonStyleLarge {
+    display: none;
+  }
+
+  #typeFormButtonStyleSmall {
+    display: inline-block;
+  }
+
+  .typeform-share {
+    font-size: 22px;
+  }
+
+  .icon-typeform {
+    top: 6px;
+  }
+}
+
+@media only screen and (max-width: 1499px) {
+  .icon-typeform {
+    top: 8px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .typeform-share {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  #typeFormButtonStyleLarge {
+    display: none;
+  }
+
+  #typeFormButtonStyleSmall {
+    display: inline-block;
+  }
+
+  .typeform-share {
+    font-size: 10px;
+  }
+
+  .icon-typeform {
+    top: 10px;
+  }
 }
 
 @font-face {
