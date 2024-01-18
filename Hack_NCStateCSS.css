@@ -162,6 +162,7 @@ canvas {
 #header {
   color: white;
   padding-bottom: 2rem;
+  align-items: center;
 }
 
 #banner-logo {
@@ -186,6 +187,14 @@ canvas {
 section {
   background-color: white;
   padding-bottom: 80px;
+  width: auto;
+  width: 105%;
+}
+
+.content-body {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
 }
 
 section:first-of-type {
@@ -203,6 +212,10 @@ section:first-of-type {
 .image-section {
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.image-section span {
+  color:#000000;
 }
 
 .image-section svg {
@@ -340,6 +353,9 @@ section:first-of-type {
 @media only screen and (min-width: 1500px) {
   #sideNav {
     display: block !important;
+  }
+  #details {
+    margin-top: -225px;
   }
 }
 
