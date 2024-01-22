@@ -1,11 +1,4 @@
 window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-
-gtag("config", "UA-56623245-2");
-
 var countDownDate = new Date("2024-02-03T05:38:00.000Z").getTime();
 
 // Update the count down every 1 second
