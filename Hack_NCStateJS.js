@@ -5,7 +5,8 @@ $(document).ready(function () {
   //Globals
   var canvasBackgroundColor = "rgb(204, 0, 0)",
     canvasTextColor = "rgb(255, 255, 255)",
-    activeImage = "Hack_NCState_Logo.png";
+    activeImage = "Hack_NCState_Logo.png",
+    activeCodeBlackImage = "Code_Black_Merge_2024/Code_Black.png"
 
   // Falling binary effect
   // ** Adapted from matrix rain animation courtesy of thecodeplayer
@@ -109,6 +110,7 @@ $(document).ready(function () {
     // If using white (really any light) background theme
     if ($(".color-ball").index(this) == 1) {
       activeImage = "images/Hack_NCState_Logo_Red.png";
+      activeCodeBlackImage = "images/Code_Black_Merge_2024/Code_Black_Red.png";
 
       document.documentElement.style.setProperty("--primary", canvasTextColor);
       document.documentElement.style.setProperty(
@@ -117,6 +119,7 @@ $(document).ready(function () {
       );
     } else {
       activeImage = "images/Hack_NCState_Logo.png";
+      activeCodeBlackImage = "images/Code_Black_Merge_2024/Code_Black.png";
 
       document.documentElement.style.setProperty(
         "--primary",
@@ -130,6 +133,7 @@ $(document).ready(function () {
 
     // Set the background wolf image. It'll need to change if going to/from white bg
     $("#banner-logo").attr("src", activeImage);
+    $("#code-black-banner-logo").attr("src", activeCodeBlackImage);
 
     $(".below-banner-text").css("color", canvasTextColor);
 
