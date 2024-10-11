@@ -1,5 +1,5 @@
 window.dataLayer = window.dataLayer || [];
-var countDownDate = new Date("2024-02-03T05:38:00.000Z").getTime();
+var countDownDate = new Date("2025-02-08T05:38:00.000Z").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
