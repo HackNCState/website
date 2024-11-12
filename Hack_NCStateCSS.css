@@ -24,6 +24,22 @@ a {
   color: var(--primary);
 }
 
+.newsletter-link {
+  color: var(--secondary); 
+  text-decoration: underline;
+  border: 2px solid transparent;
+  padding: 2px 5px;
+  transition: all 0.3s ease;
+}
+
+.newsletter-link:hover {
+  color: var(--tertiary); 
+  background-color: var(--secondary);
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-weight: bold;
+}
+
 .button-link {
   height: 3em;
   font-size: 11pt;
