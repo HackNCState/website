@@ -28,15 +28,15 @@ a {
   color: var(--secondary); 
   text-decoration: underline;
   border: 2px solid transparent;
-  padding: 2px 5px;
+  padding: 10px 15px;
   transition: all 0.3s ease;
 }
 
 .newsletter-link:hover {
   color: var(--tertiary); 
   background-color: var(--secondary);
-  border-radius: 5px;
-  padding: 2px 5px;
+  border-radius: 99px;
+  padding: 10px 15px;
   font-weight: bold;
 }
 
