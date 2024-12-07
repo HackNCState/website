@@ -26,6 +26,8 @@ a {
 
 .newsletter-link {
   color: var(--secondary); 
+  text-align: center;
+  margin: auto;
   text-decoration: underline;
   border: 2px solid transparent;
   padding: 10px 15px;
