@@ -1,3 +1,6 @@
+let oldHeight = 0
+let oldWidth = 0
+
 //document ready
 $(document).ready(function () {
   window.scrollTo(0, 1);
@@ -21,10 +24,20 @@ $(document).ready(function () {
   var columns;
   var drops;
 
-  // Function to set canvas dimensions and update columns and drops
-  function setCanvasDimensions() {
+  function resize() {
+    oldHeight = window.innerHeight
+    oldWidth = window.innerWidth
+
     c.height = window.innerHeight;
     c.width = window.innerWidth;
+  }
+
+  // Function to set canvas dimensions and update columns and drops
+  function setCanvasDimensions() {
+
+    if ((oldHeight == 0 && oldWidth == 0) || (window.innerWidth > oldWidth || window.innerHeight > oldHeight)) {
+      resize()
+    }
 
     columns = Math.floor(c.width / font_size); // number of columns for the rain
     drops = []; // an array of drops - one per column
