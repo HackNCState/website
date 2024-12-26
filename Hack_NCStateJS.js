@@ -1,3 +1,6 @@
+let oldHeight = 0
+let oldWidth = 0
+
 //document ready
 $(document).ready(function () {
   window.scrollTo(0, 1);
@@ -14,45 +17,59 @@ $(document).ready(function () {
   var c = document.getElementById("c");
   var ctx = c.getContext("2d");
 
-  /*
-   * Make the canvas full screen
-   * 1) Use screen width so when readjusting browser size binary rain doesnt get cut off
-   * 2) Subtract 2 so that the canvas width matches width: 100% (2?)
-   */
-  var longerWidth =
-    screen.height > screen.width
-      ? screen.height
-      : screen.width;
-  c.height = screen.height;
-  c.width = screen.width;
-  // isiPhone returns true here for non-iPhone even though its the same exact conditional... *sigh* smh
-  if (
-    navigator.platform.indexOf("iPod") !== -1 ||
-    navigator.platform.indexOf("iPhone") !== -1
-  ) {
-    c.height = longerWidth;
-    c.width = longerWidth;
-  }
-
-  //binary characters - do you know what is says?
-  var binary =
-    "010100000110000101100011011010110100100001100001011000110110101101110011";
-  //converting the string into an array of single characters
-  binary = binary.split("");
-
   var font_size = 10;
   if (window.innerWidth < 600) {
     font_size = 7;
   }
-  var columns = c.width / font_size; //number of columns for the rain
-  //an array of drops - one per column
-  var drops = [];
-  //x below is the x coordinate
-  //1 = y coordinate of the drop(same for every drop initially)
-  for (var x = 0; x < columns; x++) drops[x] = 1;
+  var columns;
+  var drops;
+
+  function resize() {
+    oldHeight = window.innerHeight
+    oldWidth = window.innerWidth
+
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+  }
+
+  // Function to set canvas dimensions and update columns and drops
+  function setCanvasDimensions() {
+
+    if ((oldHeight == 0 && oldWidth == 0) || (window.innerWidth > oldWidth || window.innerHeight > oldHeight)) {
+      resize()
+    }
+
+    columns = Math.floor(c.width / font_size); // number of columns for the rain
+    drops = []; // an array of drops - one per column
+
+    // x below is the x coordinate
+    // Initialize y coordinate of the drop randomly
+    for (var x = 0; x < columns; x++) drops[x] = Math.floor(Math.random() * c.height / font_size);
+  }
+
+  // Set initial canvas dimensions
+  setCanvasDimensions();
+
+  // Update canvas dimensions on window resize
+  window.addEventListener('resize', setCanvasDimensions);
+
+  //binary characters - do you know what is says?
+  var binary = 
+    "010100000110000101100011011010110100100001100001011000110110101101110011"; 
+  //converting the string into an array of single characters
+  binary = binary.split("");
 
   //drawing the characters
   function draw() {
+
+    // Recalculate columns and drops if canvas size changes
+    var newColumns = Math.floor(c.width / font_size);
+    if (newColumns !== columns) {
+      columns = newColumns;
+      drops = [];
+      for (var x = 0; x < columns; x++) drops[x] = Math.floor(Math.random() * c.height / font_size);
+    }
+
     //Black BG for the canvas
     //translucent BG to show trail
     ctx.globalAlpha = 0.08; //opacity
@@ -71,7 +88,7 @@ $(document).ready(function () {
 
       //sending the drop back to the top randomly after it has crossed the screen
       //adding a randomness to the reset to make the drops scattered on the Y axis
-      if (drops[i] * font_size > c.height && Math.random() > 0.975)
+      if (drops[i] * font_size > c.height && Math.random() > 0.975) 
         drops[i] = 0;
 
       //incrementing Y coordinate
@@ -100,7 +117,7 @@ $(document).ready(function () {
     // If you selected the same theme again, do nothing
     if ($(this).hasClass("active-theme")) return;
 
-    // Otherwise, switch which theme is actuve to the one selected
+    // Otherwise, switch which theme is active to the one selected
     $(".color-ball").removeClass("active-theme");
     $(this).addClass("active-theme");
 
@@ -175,4 +192,4 @@ $(window).scroll(function () {
       }
     }
   });
-});
+}); 

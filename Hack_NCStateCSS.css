@@ -10,8 +10,26 @@ html {
   min-width: 320px;
   color: var(--primary);
   font-family: Montserrat;
-  -webkit-overflow-scrolling: touch; /* Flick scrolling for iPhones */
+  -webkit-overflow-scrolling: touch;
+  /* Flick scrolling for iPhones */
   scroll-behavior: smooth;
+  
+}
+
+
+canvas {
+  background-color: rgb(204, 0, 0);
+  display: block;
+  position: fixed;
+  z-index: -1;
+  opacity: 0; 
+  animation: fadeIn 1s forwards; 
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 #countdown {
@@ -25,7 +43,7 @@ a {
 }
 
 .newsletter-link {
-  color: var(--secondary); 
+  color: var(--secondary);
   text-align: center;
   margin: auto;
   text-decoration: underline;
@@ -35,7 +53,7 @@ a {
 }
 
 .newsletter-link:hover {
-  color: var(--tertiary); 
+  color: var(--tertiary);
   background-color: var(--secondary);
   border-radius: 99px;
   padding: 10px 15px;
@@ -76,7 +94,7 @@ a {
   body::-webkit-scrollbar {
     width: 1em;
   }
-  
+
   body::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -91,7 +109,8 @@ a {
 
 .theme-picker {
   margin-left: -120px;
-  -webkit-transition: margin-left 0.5s; /* Safari */
+  -webkit-transition: margin-left 0.5s;
+  /* Safari */
   transition: margin-left 0.5s;
 }
 
@@ -110,7 +129,8 @@ a {
   color: white;
   cursor: pointer;
   z-index: 1000;
-  -webkit-transition: transform 0.5s; /* Safari */
+  -webkit-transition: transform 0.5s;
+  /* Safari */
   transition: transform 0.5s;
 }
 
@@ -225,7 +245,7 @@ section:first-of-type {
 }
 
 .image-section span {
-  color:#000000;
+  color: #000000;
 }
 
 .image-section svg {
@@ -247,7 +267,8 @@ section:first-of-type {
   right: 0;
   top: 25%;
   height: 50%;
-  width: 1px; /* or 100px */
+  width: 1px;
+  /* or 100px */
   border-right: 1px solid #07575b;
 }
 
@@ -258,7 +279,8 @@ section:first-of-type {
 .question {
   padding: 10px 0px;
   width: 95%;
-  -webkit-transition: max-height 0.5s, height 0.5s; /* Safari */
+  -webkit-transition: max-height 0.5s, height 0.5s;
+  /* Safari */
   transition: max-height 0.5s, height 0.5s;
 }
 
@@ -322,12 +344,12 @@ section:first-of-type {
   background-color: var(--primary);
 }
 
-#footer > div > a {
+#footer>div>a {
   color: white;
   margin: 20px;
 }
 
-#footer > * {
+#footer>* {
   margin-bottom: 20px;
   color: var(--white);
 }
@@ -340,14 +362,10 @@ section:first-of-type {
   .sponsor-row {
     margin-bottom: 10px;
   }
-
-  #mlh-trust-badge {
-    display: none !important;
-  }
 }
 
 @media only screen and (max-width: 768px) {
-  #footer > div > a {
+  #footer>div>a {
     margin: 15px;
   }
 
@@ -372,6 +390,7 @@ section:first-of-type {
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
@@ -387,23 +406,19 @@ section:first-of-type {
 #typeFormButtonStyleSmall {
   margin-top: 15;
   display: none;
+  word-break: break-word;
 }
 
 @media only screen and (max-width: 992px) {
-  #typeFormButtonStyleLarge {
-    display: none;
-  }
-
-  #typeFormButtonStyleSmall {
-    display: inline-block;
-  }
-
   .typeform-share {
-    font-size: 22px;
+    font-size: 12px;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    margin: 0 !important;
   }
 
   .icon-typeform {
-    top: 6px;
+    top: 4px;
   }
 }
 
