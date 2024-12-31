@@ -13,7 +13,7 @@ html {
   -webkit-overflow-scrolling: touch;
   /* Flick scrolling for iPhones */
   scroll-behavior: smooth;
-  
+
 }
 
 
@@ -22,8 +22,8 @@ canvas {
   display: block;
   position: fixed;
   z-index: -1;
-  opacity: 0; 
-  animation: fadeIn 1s forwards; 
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
@@ -435,20 +435,19 @@ section:first-of-type {
 }
 
 @media only screen and (max-width: 465px) {
-  #typeFormButtonStyleLarge {
-    display: none;
-  }
-
   #typeFormButtonStyleSmall {
     display: inline-block;
   }
 
   .typeform-share {
     font-size: 10px;
+    word-break: break-word !important;
+    white-space: normal !important;
   }
 
   .icon-typeform {
     top: 10px;
+    display: none;
   }
 }
 
